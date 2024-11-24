@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "deno run -A --node-modules-dir npm:next@latest dev --turbopack",
+    "build": "deno run -A --node-modules-dir npm:next@latest build",
+    "start": "deno run -A --node-modules-dir npm:next@latest start",
+    "lint": "deno run -A --node-modules-dir npm:next@latest lint"
   },
   "dependencies": {
     "react": "19.0.0-rc-66855b96-20241106",
