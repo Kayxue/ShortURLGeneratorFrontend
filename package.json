@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "deno run -A --node-modules-dir npm:next@latest dev --turbopack",
+    "dev": "deno run -A --node-modules-dir npm:next@latest dev",
     "build": "deno run -A --node-modules-dir npm:next@latest build",
     "start": "deno run -A --node-modules-dir npm:next@latest start",
     "lint": "deno run -A --node-modules-dir npm:next@latest lint"
