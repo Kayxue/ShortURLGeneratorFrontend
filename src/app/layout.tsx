@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,7 +29,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* 添加導航欄 */}
+        <nav className="bg-blue-600 text-white p-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Link href="/" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/dashboard" className="hover:underline">
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link href="/qrcode" className="hover:underline">
+                QRCode
+              </Link>
+            </li>
+            <li>
+              <Link href="/analytics" className="hover:underline">
+                Analytics
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <main>{children}</main>
       </body>
     </html>
   );

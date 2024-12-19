@@ -5,6 +5,8 @@ import { useState } from "react";
 const ShortUrlPage = () => {
 	const [longUrl, setLongUrl] = useState("");
 	const [customShortUrl, setCustomShortUrl] = useState("");
+	const [expiration, setExpiration] = useState("");
+	const [password, setPassword] = useState("");
 	const [generatedUrl, setGeneratedUrl] = useState<string | null>(null);
 	const [error, setError] = useState<string | null>(null);
 
@@ -23,6 +25,8 @@ const ShortUrlPage = () => {
 						param: customShortUrl.length
 							? customShortUrl
 							: undefined,
+						expiredTime: expiration || undefined,
+						password: password || undefined,
 					}),
 				}
 			);
@@ -46,7 +50,7 @@ const ShortUrlPage = () => {
 				</h1>
 				<div className="mb-4">
 					<label className="block text-sm font-medium text-gray-700 mb-2">
-						長網址
+						長網址輸入
 					</label>
 					<input
 						type="text"
@@ -65,6 +69,31 @@ const ShortUrlPage = () => {
 						value={customShortUrl}
 						onChange={(e) => setCustomShortUrl(e.target.value)}
 						placeholder="輸入自訂短網址"
+						className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+					/>
+				</div>
+				{/* 過期時間輸入 */}
+				<div className="mb-4">
+					<label className="block text-sm font-medium text-gray-700 mb-2">
+						過期時間 (選填，格式: YYYY-MM-DD)
+					</label>
+					<input
+						type="date"
+						value={expiration}
+						onChange={(e) => setExpiration(e.target.value)}
+						className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+					/>
+				</div>
+				{/* 密碼輸入 */}
+				<div className="mb-4">
+					<label className="block text-sm font-medium text-gray-700 mb-2">
+						設置密碼 (選填)
+					</label>
+					<input
+						type="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						placeholder="設置密碼保護短網址"
 						className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
 					/>
 				</div>
