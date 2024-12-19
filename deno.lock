@@ -9,6 +9,7 @@
     "npm:next@15.0.3": "15.0.3_react@19.0.0-rc-66855b96-20241106_react-dom@19.0.0-rc-66855b96-20241106__react@19.0.0-rc-66855b96-20241106",
     "npm:next@latest": "15.0.3_react@19.0.0-rc-66855b96-20241106_react-dom@19.0.0-rc-66855b96-20241106__react@19.0.0-rc-66855b96-20241106",
     "npm:postcss@^8.4.49": "8.4.49",
+    "npm:qrcode.react@^4.2.0": "4.2.0_react@19.0.0",
     "npm:react-dom@19.0.0-rc-66855b96-20241106": "19.0.0-rc-66855b96-20241106_react@19.0.0-rc-66855b96-20241106",
     "npm:react@19.0.0-rc-66855b96-20241106": "19.0.0-rc-66855b96-20241106",
     "npm:tailwindcss@^3.4.16": "3.4.16_postcss@8.4.49",
@@ -1623,7 +1624,7 @@
         "busboy",
         "caniuse-lite",
         "postcss@8.4.31",
-        "react",
+        "react@19.0.0-rc-66855b96-20241106",
         "react-dom",
         "sharp",
         "styled-jsx"
@@ -1829,18 +1830,27 @@
     "punycode@2.3.1": {
       "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="
     },
+    "qrcode.react@4.2.0_react@19.0.0": {
+      "integrity": "sha512-QpgqWi8rD9DsS9EP3z7BT+5lY5SFhsqGjpgW5DY/i3mK4M9DTBNz3ErMi8BWYEfI3L0d8GIbGmcdFAS1uIRGjA==",
+      "dependencies": [
+        "react@19.0.0"
+      ]
+    },
     "queue-microtask@1.2.3": {
       "integrity": "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="
     },
     "react-dom@19.0.0-rc-66855b96-20241106_react@19.0.0-rc-66855b96-20241106": {
       "integrity": "sha512-D25vdaytZ1wFIRiwNU98NPQ/upS2P8Co4/oNoa02PzHbh8deWdepjm5qwZM/46OdSiGv4WSWwxP55RO9obqJEQ==",
       "dependencies": [
-        "react",
+        "react@19.0.0-rc-66855b96-20241106",
         "scheduler"
       ]
     },
     "react-is@16.13.1": {
       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
+    },
+    "react@19.0.0": {
+      "integrity": "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="
     },
     "react@19.0.0-rc-66855b96-20241106": {
       "integrity": "sha512-klH7xkT71SxRCx4hb1hly5FJB21Hz0ACyxbXYAECEqssUjtJeFUAaI2U1DgJAzkGEnvEm3DkxuBchMC/9K4ipg=="
@@ -2120,7 +2130,7 @@
       "integrity": "sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==",
       "dependencies": [
         "client-only",
-        "react"
+        "react@19.0.0-rc-66855b96-20241106"
       ]
     },
     "sucrase@3.35.0": {
@@ -2382,6 +2392,7 @@
         "npm:eslint@^8.57.1",
         "npm:next@15.0.3",
         "npm:postcss@^8.4.49",
+        "npm:qrcode.react@^4.2.0",
         "npm:react-dom@19.0.0-rc-66855b96-20241106",
         "npm:react@19.0.0-rc-66855b96-20241106",
         "npm:tailwindcss@^3.4.16",

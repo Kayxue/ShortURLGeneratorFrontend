@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-//import QRCode from "qrcode.react";
+import {QRCodeSVG} from "qrcode.react";
 
 const QRCodeGenerator = () => {
     const [url, setUrl] = useState("");
@@ -63,7 +63,7 @@ const QRCodeGenerator = () => {
                 </div>
                 {url && (
                     <div className="mt-6 flex justify-center">
-                        <QRCode value={url} size={size} bgColor={bgColor} fgColor={fgColor} />
+                        <QRCodeSVG value={url} size={size} bgColor={bgColor} fgColor={fgColor} />
                     </div>
                 )}
             </div>
