@@ -15,7 +15,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUrls = async () => {
             try {
-                const response = await fetch("/api/urls");
+                const response = await fetch(`https://shorturlprojectbackend.fly.dev/shorturl/{param}/info`);
                 if (!response.ok) throw new Error("Failed to fetch URLs");
                 const data = await response.json();
                 setUrls(data);
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     const handleDelete = async (id: string) => {
         try {
-            const response = await fetch(`/api/urls/${id}`, {
+            const response = await fetch(`https://shorturlprojectbackend.fly.dev/shorturl/{param}/info/${id}`, {
                 method: "DELETE",
             });
             if (!response.ok) throw new Error("Failed to delete URL");

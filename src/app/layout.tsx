@@ -43,11 +43,6 @@ export default function RootLayout({
               </Link>
             </li>
             <li>
-              <Link href="/qrcode" className="hover:underline">
-                QRCode
-              </Link>
-            </li>
-            <li>
               <Link href="/analytics" className="hover:underline">
                 Analytics
               </Link>

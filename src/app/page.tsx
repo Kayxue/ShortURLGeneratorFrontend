@@ -1,6 +1,7 @@
 "use client";
 import { url } from "inspector";
 import { useState } from "react";
+import {QRCodeSVG} from "qrcode.react";
 
 const ShortUrlPage = () => {
 	const [longUrl, setLongUrl] = useState("");
@@ -9,6 +10,7 @@ const ShortUrlPage = () => {
 	const [password, setPassword] = useState("");
 	const [generatedUrl, setGeneratedUrl] = useState<string | null>(null);
 	const [error, setError] = useState<string | null>(null);
+	const [isQrVisible, setIsQrVisible] = useState(false); // 控制 QRCode 折疊
 
 	const handleGenerate = async () => {
 		setError(null); // 清除錯誤
@@ -36,7 +38,8 @@ const ShortUrlPage = () => {
 			}
 
 			const data = (await response.json())[0];
-			setGeneratedUrl(`${window.location.origin}/${data.param}`);
+			setGeneratedUrl(`https://shorturlprojectbackend.fly.dev/shorturl/${data.param}`);
+			setIsQrVisible(false); // 每次生成新短網址時，折疊 QRCode
 		} catch (err) {
 			setError(err instanceof Error ? err.message : "Unknown error");
 		}
@@ -114,6 +117,27 @@ const ShortUrlPage = () => {
 						>
 							{generatedUrl}
 						</a>
+						{/* QRCode 折疊區塊 */}
+                        <div className="mt-4">
+                            <button
+                                onClick={() => setIsQrVisible(!isQrVisible)}
+                                className="text-sm text-blue-500 underline focus:outline-none"
+                            >
+                                {isQrVisible
+                                    ? "隱藏 QRCode"
+                                    : "顯示 QRCode"}
+                            </button>
+                            {isQrVisible && (
+                                <div className="mt-4 flex justify-center">
+                                    <QRCodeSVG
+                                        value={generatedUrl}
+                                        size={128}
+                                        bgColor="#ffffff"
+                                        fgColor="#000000"
+                                    />
+                                </div>
+                            )}
+                        </div>
 					</div>
 				)}
 				{error && (
