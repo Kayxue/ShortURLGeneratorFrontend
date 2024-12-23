@@ -1,6 +1,5 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import React,{ useState, useEffect } from "react";
 
 export default function Page({ params }: { params: Promise<{ param: string }> }) {
@@ -11,7 +10,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 	const checkShortUrl = async () => {
 		try {
 			const response = await fetch(
-				`https://shorturlprojectbackend.fly.dev/shorturl/${React.use(params).param}`,
+				`https://shorturlprojectbackend.fly.dev/shorturl/${(await params).param}`,
 				{
 					method: "GET",
 				}
@@ -25,7 +24,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 			} else if (response.status === 400) {
 				setError("短網址不存在！");
 			}
-		} catch (err) {
+		} catch (_) {
 			setError("無法連接到伺服器，請稍後再試！");
 		}
 	};
@@ -34,7 +33,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 		setError(null); // 清除錯誤
 		try {
 			const response = await fetch(
-				`https://shorturlprojectbackend.fly.dev/shorturl/${React.use(params).param}/password`,
+				`https://shorturlprojectbackend.fly.dev/shorturl/${(await params).param}/password`,
 				{
 					method: "POST",
 					headers: {
@@ -50,7 +49,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 			} else if (response.status === 400) {
 				setError("密碼錯誤！");
 			}
-		} catch (err) {
+		} catch (_) {
 			setError("無法連接到伺服器，請稍後再試！");
 		}
 	};
