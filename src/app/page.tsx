@@ -38,7 +38,7 @@ const ShortUrlPage = () => {
 			}
 
 			const data = (await response.json())[0];
-			setGeneratedUrl(`https://shorturlprojectbackend.fly.dev/shorturl/${data.param}`);
+			setGeneratedUrl(`${window.location.origin}/${data.param}`);
 			setIsQrVisible(false); // 每次生成新短網址時，折疊 QRCode
 		} catch (err) {
 			setError(err instanceof Error ? err.message : "Unknown error");

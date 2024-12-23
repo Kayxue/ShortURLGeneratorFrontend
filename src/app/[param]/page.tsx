@@ -16,6 +16,7 @@ export default function Page({ params }: { params: { param: string } }) {
 					method: "GET",
 				}
 			);
+            console.log(response)
 			if (response.status === 201) {
 				const url = await response.text();
                 window.location.href = url;// 無密碼保護，直接重定向
@@ -47,7 +48,7 @@ export default function Page({ params }: { params: { param: string } }) {
 				const url = await response.text();
 				window.location.href = url;// 密碼正確，重定向
 			} else if (response.status === 400) {
-				setError("密碼錯誤或短網址不存在！");
+				setError("密碼錯誤！");
 			}
 		} catch (err) {
 			setError("無法連接到伺服器，請稍後再試！");

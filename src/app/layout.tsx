@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         {/* 添加導航欄 */}
         <nav className="bg-blue-600 text-white p-4">
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 ms-auto">
             <li>
               <Link href="/" className="hover:underline">
                 Home
