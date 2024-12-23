@@ -47,6 +47,11 @@ export default function RootLayout({
                 Analytics
               </Link>
             </li>
+            <li>
+              <a href="https://1drv.ms/p/c/838befa8c41b5c8d/AbfsoqIYviBGh2v93_eafmU?e=rNTt3b" className="hover:underline">
+                Slides
+              </a>
+            </li>
           </ul>
         </nav>
         <main>{children}</main>
