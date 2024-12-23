@@ -48,7 +48,7 @@ export default function RootLayout({
               </Link>
             </li>
             <li>
-              <a href="https://1drv.ms/p/c/838befa8c41b5c8d/AbfsoqIYviBGh2v93_eafmU?e=rNTt3b" className="hover:underline">
+              <a href="https://1drv.ms/p/c/838befa8c41b5c8d/EbfsoqIYviBGh2v93_eafmUBXbIbpQ3pEhV2rFsL9uqt9g?e=zZtP95" className="hover:underline">
                 Slides
               </a>
             </li>
