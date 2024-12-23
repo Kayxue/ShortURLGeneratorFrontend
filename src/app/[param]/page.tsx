@@ -1,9 +1,9 @@
 "use client";
 
 import { redirect } from "next/navigation";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 
-export default function Page({ params }: { params: { param: string } }) {
+export default function Page({ params }: { params: Promise<{ param: string }> }) {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState<string | null>(null);
 	const [isPasswordRequired, setIsPasswordRequired] = useState(false);
@@ -11,7 +11,7 @@ export default function Page({ params }: { params: { param: string } }) {
 	const checkShortUrl = async () => {
 		try {
 			const response = await fetch(
-				`https://shorturlprojectbackend.fly.dev/shorturl/${params.param}`,
+				`https://shorturlprojectbackend.fly.dev/shorturl/${React.use(params).param}`,
 				{
 					method: "GET",
 				}
@@ -34,7 +34,7 @@ export default function Page({ params }: { params: { param: string } }) {
 		setError(null); // 清除錯誤
 		try {
 			const response = await fetch(
-				`https://shorturlprojectbackend.fly.dev/shorturl/${params.param}/password`,
+				`https://shorturlprojectbackend.fly.dev/shorturl/${React.use(params).param}/password`,
 				{
 					method: "POST",
 					headers: {
