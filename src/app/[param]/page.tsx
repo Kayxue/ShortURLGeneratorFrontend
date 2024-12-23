@@ -24,7 +24,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 			} else if (response.status === 400) {
 				setError("短網址不存在！");
 			}
-		} catch (_) {
+		} catch {
 			setError("無法連接到伺服器，請稍後再試！");
 		}
 	};
@@ -49,7 +49,7 @@ export default function Page({ params }: { params: Promise<{ param: string }> })
 			} else if (response.status === 400) {
 				setError("密碼錯誤！");
 			}
-		} catch (_) {
+		} catch {
 			setError("無法連接到伺服器，請稍後再試！");
 		}
 	};

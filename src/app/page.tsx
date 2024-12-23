@@ -1,5 +1,4 @@
 "use client";
-import { url } from "inspector";
 import { useState } from "react";
 import {QRCodeSVG} from "qrcode.react";
 
