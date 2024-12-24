@@ -9,10 +9,11 @@
     "lint": "deno run -A --node-modules-dir npm:next@latest lint"
   },
   "dependencies": {
+    "moment-timezone": "^0.5.46",
+    "next": "15.0.3",
     "qrcode.react": "^4.2.0",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
     "typescript": "^5.7.2",

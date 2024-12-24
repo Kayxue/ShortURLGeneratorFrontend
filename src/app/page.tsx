@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import {QRCodeSVG} from "qrcode.react";
+import moment from "moment-timezone";
 
 const ShortUrlPage = () => {
 	const [longUrl, setLongUrl] = useState("");
@@ -15,7 +16,7 @@ const ShortUrlPage = () => {
 		setError(null); // 清除錯誤
 		try {
 			const response = await fetch(
-				"https://shorturlprojectbackend.fly.dev/shorturl/create",
+				"http://localhost:3000/shorturl/create",
 				{
 					method: "POST",
 					headers: {
@@ -26,13 +27,14 @@ const ShortUrlPage = () => {
 						param: customShortUrl.length
 							? customShortUrl
 							: undefined,
-						expiredTime: expiration || undefined,
+						expiredTime: moment(expiration).tz("Asia/Taipei").toISOString() || undefined,
 						password: password || undefined,
 					}),
 				}
 			);
 
 			if (!response.ok) {
+				console.log(await response.json())
 				throw new Error("Failed to generate short URL");
 			}
 
