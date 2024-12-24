@@ -34,7 +34,6 @@ const ShortUrlPage = () => {
 			);
 
 			if (!response.ok) {
-				console.log(await response.json())
 				throw new Error("Failed to generate short URL");
 			}
 
