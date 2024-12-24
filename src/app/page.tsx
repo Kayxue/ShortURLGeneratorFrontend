@@ -16,7 +16,7 @@ const ShortUrlPage = () => {
 		setError(null); // 清除錯誤
 		try {
 			const response = await fetch(
-				"http://localhost:3000/shorturl/create",
+				"https://shorturlprojectbackend.fly.dev/shorturl/create",
 				{
 					method: "POST",
 					headers: {
