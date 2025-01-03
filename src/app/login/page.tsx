@@ -1,3 +1,4 @@
+// eslint-disable-line @typescript-eslint/no-unused-vars
 "use client";
 
 import { useState } from "react";
@@ -15,7 +16,7 @@ export default function LoginPage() {
         setError(null);
         try {
             const response = await fetch(
-                `http://localhost:3000/user/login`,
+                `https://shorturlprojectbackend.fly.dev/user/login`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

@@ -1,3 +1,4 @@
+// eslint-disable-line @typescript-eslint/no-unused-vars
 "use client";
 
 import Link from "next/link";
@@ -9,7 +10,7 @@ const Navbar = () => {
 
 	const checkLogin = async () => {
 		try {
-			const response = await fetch("http://localhost:3000/user/profile", {
+			const response = await fetch("https://shorturlprojectbackend.fly.dev/user/profile", {
 				credentials: "include",
 			});
 			if (!response.ok) setIsLoggedIn(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
 	},[]);
 
 	const handleLogout = async () => {
-		const response = await fetch("http://localhost:3000/user/logout", {
+		const response = await fetch("https://shorturlprojectbackend.fly.dev/user/logout", {
 			credentials: "include",
 		});
 		// 模擬登出邏輯

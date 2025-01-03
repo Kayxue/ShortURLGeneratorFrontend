@@ -1,3 +1,4 @@
+// eslint-disable-line @typescript-eslint/no-unused-vars
 "use client";
 
 import { useState, useEffect } from "react";
@@ -29,7 +30,7 @@ export default function ProfilePage() {
     const fetchUserProfile = async () => {
         try {
             const response = await fetch(
-                "http://localhost:3000/user/profile",
+                "https://shorturlprojectbackend.fly.dev/user/profile",
                 {
                     credentials:"include"
                 }
