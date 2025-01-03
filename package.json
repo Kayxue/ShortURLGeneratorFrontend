@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "deno run -A --node-modules-dir npm:next@latest dev",
+    "build": "deno run -A --node-modules-dir npm:next@latest build",
+    "start": "deno run -A --node-modules-dir npm:next@latest start",
     "lint": "next lint"
   },
   "dependencies": {
