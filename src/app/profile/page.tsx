@@ -21,6 +21,7 @@ export default function ProfilePage() {
     const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
     const [dashboardData, setDashboardData] = useState<UrlData[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const [loading,setLoading]=useState<boolean>(true);
 
     const router = useRouter();
 
@@ -28,7 +29,10 @@ export default function ProfilePage() {
     const fetchUserProfile = async () => {
         try {
             const response = await fetch(
-                "https://shorturlprojectbackend.fly.dev/user/profile"
+                "http://localhost:3000/user/profile",
+                {
+                    credentials:"include"
+                }
             );
             if (!response.ok) throw new Error("無法獲取用戶資訊");
             const data = await response.json();
@@ -38,13 +42,17 @@ export default function ProfilePage() {
             setError("請先登入！");
             setIsLoggedIn(false);
         }
+        setLoading(false)
     };
 
     // 獲取 Dashboard 數據
     const fetchDashboardData = async () => {
         try {
             const response = await fetch(
-                "https://shorturlprojectbackend.fly.dev/shorturl/ix_XqiQs/info"
+                "https://shorturlprojectbackend.fly.dev/shorturl/ix_XqiQs/info",
+                {
+                    credentials:"include"
+                }
             );
             if (!response.ok) throw new Error("無法獲取 Dashboard 數據");
             const data = await response.json();
@@ -60,12 +68,7 @@ export default function ProfilePage() {
         fetchDashboardData();
     }, []);
 
-    if (!isLoggedIn) {
-        alert(error || "請先登入！");
-        return null;
-    }
-
-    return (
+    return loading?<><p>Loading</p></>:(
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
             <div className="p-6 bg-white rounded shadow-md w-full max-w-4xl">
                 {/* 用戶資訊 */}
