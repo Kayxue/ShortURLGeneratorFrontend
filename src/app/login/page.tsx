@@ -15,7 +15,7 @@ export default function LoginPage() {
         setError(null);
         try {
             const response = await fetch(
-                "https://shorturlprojectbackend.fly.dev/user/login",
+                `https://shorturlprojectbackend.fly.dev/user/login`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -26,7 +26,6 @@ export default function LoginPage() {
             if (response.ok) {
                 const data = await response.json();
                 console.log("登入成功", data);
-                router.push("/dashboard");
             } else {
                 setError("登入失敗，請檢查帳號或密碼！");
             }
@@ -39,7 +38,7 @@ export default function LoginPage() {
         setError(null);
         try {
             const response = await fetch(
-                "https://shorturlprojectbackend.fly.dev/user/register",
+                `https://shorturlprojectbackend.fly.dev/user/register`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
